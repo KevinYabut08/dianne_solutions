@@ -31,11 +31,38 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// ── ACCORDION ─────────────────────────────────
+document.querySelectorAll('.acc-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item    = trigger.closest('.acc-item');
+    const panel   = item.querySelector('.acc-panel');
+    const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
+
+    // Close all other open panels
+    document.querySelectorAll('.acc-trigger[aria-expanded="true"]').forEach(t => {
+      if (t !== trigger) {
+        t.setAttribute('aria-expanded', 'false');
+        t.closest('.acc-item').querySelector('.acc-panel').classList.remove('open');
+      }
+    });
+
+    // Toggle this one
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+    panel.classList.toggle('open', !isOpen);
+  });
+});
+
+// Open first item by default
+const firstTrigger = document.querySelector('.acc-trigger');
+if (firstTrigger) {
+  firstTrigger.setAttribute('aria-expanded', 'true');
+  firstTrigger.closest('.acc-item').querySelector('.acc-panel').classList.add('open');
+}
+
 // ── SCROLL REVEAL ─────────────────────────────
 const revealEls = document.querySelectorAll(
-  '.svc-card, .logo-card, .ask-item, .about-text, .about-photo-col, .contact-header, .contact-cards, .contact-disclaimer, .section-title, .section-sub, .section-label, .section-tag, .qs-inner'
+  '.svc-card, .logo-card, .acc-item, .ask-header, .about-text, .about-photo-col, .contact-header, .contact-cards, .contact-disclaimer, .section-title, .section-sub, .section-tag, .qs-inner'
 );
-
 revealEls.forEach(el => el.classList.add('reveal'));
 
 const observer = new IntersectionObserver(entries => {
@@ -45,20 +72,18 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 revealEls.forEach(el => observer.observe(el));
 
 // ── NAV ACTIVE HIGHLIGHT ──────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-links a');
-
-sections.forEach(s => {
+document.querySelectorAll('section[id]').forEach(s => {
   new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) navLinks.forEach(l => {
-        l.style.color = l.getAttribute('href') === `#${e.target.id}` ? 'var(--c-navy)' : '';
-      });
+      if (e.isIntersecting) {
+        document.querySelectorAll('.nav-links a').forEach(l => {
+          l.style.color = l.getAttribute('href') === `#${e.target.id}` ? 'var(--c-navy)' : '';
+        });
+      }
     });
   }, { threshold: 0.35 }).observe(s);
 });
