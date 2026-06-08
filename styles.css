@@ -1294,3 +1294,261 @@ a.ticker-logo:hover img {
   filter: none;
   opacity: 1;
 }
+
+/* ── INVESTMENTS SECTION ── */
+
+#investments {
+  padding: 6rem 0;
+  background: #f8f9fc;
+}
+
+/* Four pillars row */
+.invest-pillars {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2.5rem 0 3.5rem;
+}
+
+.invest-pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  max-width: 130px;
+}
+
+.invest-pillar svg {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.invest-pillar span {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+/* Table wrapper */
+.invest-table-wrap {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(30,58,95,0.08);
+  margin-bottom: 3rem;
+}
+
+.invest-table-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #1e3a5f;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+.invest-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.invest-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.88rem;
+}
+
+.invest-table thead tr {
+  border-bottom: 2px solid #e8edf5;
+}
+
+/* Column header cells */
+.invest-table thead th {
+  padding: 0 1rem 1.2rem;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.invest-table thead th.row-label-th {
+  width: 130px;
+  min-width: 100px;
+}
+
+.col-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.col-acronym {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.col-fullname {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #4a6080;
+  text-align: center;
+}
+
+/* Column accent colors */
+.col-rrsp .col-acronym { background: #4a7c3f; }
+.col-resp  .col-acronym { background: #2563b0; }
+.col-tfsa  .col-acronym { background: #0891b2; }
+.col-fhsa  .col-acronym { background: #6b46c1; }
+
+/* Body rows */
+.invest-table tbody tr {
+  border-bottom: 1px solid #f0f3f8;
+  transition: background 0.15s;
+}
+
+.invest-table tbody tr:hover {
+  background: #f5f8fd;
+}
+
+.invest-table tbody td {
+  padding: 1rem 1rem;
+  vertical-align: top;
+  color: #2d4060;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.invest-table tbody td.row-label {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1e3a5f;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-top: 1.1rem;
+  background: #f8fafd;
+  min-width: 100px;
+}
+
+.invest-table tbody td.row-label svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #1e3a5f;
+  opacity: 0.7;
+}
+
+.invest-disclaimer {
+  font-size: 0.78rem;
+  color: #7a8fa8;
+  margin-top: 1.2rem;
+  line-height: 1.5;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Goals row */
+.invest-goals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.invest-goal-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(30,58,95,0.06);
+}
+
+.invest-goal-card svg {
+  width: 56px;
+  height: 56px;
+}
+
+.invest-goal-card span {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  line-height: 1.4;
+}
+
+/* CTA band */
+.invest-cta {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+}
+
+.invest-cta-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.invest-cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.invest-cta p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.invest-cta .btn-primary {
+  background: #fff;
+  color: #1e3a5f;
+  border-color: #fff;
+}
+
+.invest-cta .btn-primary:hover {
+  background: #e8f0fa;
+}
+
+@media (max-width: 768px) {
+  .invest-pillars {
+    gap: 1.2rem;
+  }
+  .invest-table-wrap {
+    padding: 1.5rem 1rem;
+  }
+  .invest-table-title {
+    font-size: 1.05rem;
+  }
+  .invest-cta {
+    padding: 2rem 1.25rem;
+  }
+  .invest-cta h3 {
+    font-size: 1.35rem;
+  }
+}
