@@ -896,7 +896,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .contact-header .section-sub {
   max-width: 100%;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 /* Contact cards grid */
@@ -1550,5 +1550,26 @@ a.ticker-logo:hover img {
   }
   .invest-cta h3 {
     font-size: 1.35rem;
+  }
+}
+
+/* ── BOOK NOW BUTTON ── */
+.btn-booknow {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .btn-booknow {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: unset;
+    text-align: center;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.9rem;
   }
 }
